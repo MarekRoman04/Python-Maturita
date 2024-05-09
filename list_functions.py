@@ -1,7 +1,3 @@
-my_list = [10, 2, 3, 7, 4, 2, 6]
-import time
-
-
 def bubble_sort(list: list) -> list:
     for i in range(len(list)):
         for j in range(0, len(list) - 1):
