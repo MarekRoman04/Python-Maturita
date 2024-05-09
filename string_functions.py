@@ -52,6 +52,24 @@ def split(string: str, separator: str = " ") -> list[str]:
         else:
             sub_string += string[i]
             i += 1
-    splited_list += [sub_string]
+    
+    if sub_string:
+        splited_list += [sub_string]
 
     return splited_list
+
+
+def replace(string: str, old: str, new: str) -> str:
+    new_string = ""
+    old_len = len(old)
+    i = 0
+
+    while i < len(string):
+        if string[i : i + old_len] == old:
+            new_string += new
+            i += old_len
+        else:
+            new_string += string[i]
+            i += 1
+    
+    return new_string
