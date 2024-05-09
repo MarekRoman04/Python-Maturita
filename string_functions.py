@@ -52,7 +52,7 @@ def split(string: str, separator: str = " ") -> list[str]:
         else:
             sub_string += string[i]
             i += 1
-    
+
     if sub_string:
         splited_list += [sub_string]
 
@@ -71,5 +71,25 @@ def replace(string: str, old: str, new: str) -> str:
         else:
             new_string += string[i]
             i += 1
-    
+
     return new_string
+
+
+def count_vowels(string: str) -> int:
+    count = 0
+
+    for char in string:
+        count = count + 1 if char in "aAeEiIoOuU" else count
+
+    return count
+
+
+def count_consonants(string: str) -> int:
+    count = 0
+
+    for char in string:
+        count = (
+            count + 1 if char in "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ" else count
+        )
+
+    return count
