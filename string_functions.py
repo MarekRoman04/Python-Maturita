@@ -5,7 +5,6 @@ def is_digit(string: str) -> bool:
 
     return True
 
-
 def to_upper(string: str) -> str:
     upper_string = str()
 
@@ -19,7 +18,7 @@ def to_upper(string: str) -> str:
 
 
 def to_lower(string: str) -> str:
-    lower_string = str()
+    lower_string = ""
 
     for char in string:
         if ord(char) > 64 and ord(char) < 91:
@@ -28,3 +27,10 @@ def to_lower(string: str) -> str:
             lower_string += char
 
     return lower_string
+
+def join(string_list : list[str], separator: str) -> str:
+    merged_string = ""
+    for string in string_list:
+        merged_string += string + separator
+    
+    return merged_string[:-len(separator)]
