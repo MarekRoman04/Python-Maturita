@@ -93,3 +93,12 @@ def count_consonants(string: str) -> int:
         )
 
     return count
+
+def left_padding(string: str, by: int, fill: str = " ") -> str:
+    return (fill * by) + string
+
+def right_padding(string: str, by: int, fill: str = " ") -> str:
+    return string + (fill * by)
+
+def position_center(string: str, l: int, fill: str = " ") -> str:
+    return (fill * ((l - len(string)) // 2)) + string + (fill * ((l - len(string)) // 2))
