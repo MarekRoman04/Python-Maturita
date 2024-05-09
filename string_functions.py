@@ -5,6 +5,7 @@ def is_digit(string: str) -> bool:
 
     return True
 
+
 def to_upper(string: str) -> str:
     upper_string = str()
 
@@ -28,9 +29,29 @@ def to_lower(string: str) -> str:
 
     return lower_string
 
-def join(string_list : list[str], separator: str) -> str:
+
+def join(string_list: list[str], separator: str) -> str:
     merged_string = ""
     for string in string_list:
         merged_string += string + separator
-    
-    return merged_string[:-len(separator)]
+
+    return merged_string[: -len(separator)]
+
+
+def split(string: str, separator: str = " ") -> list[str]:
+    splited_list = []
+    separator_len = len(separator)
+    i = 0
+    sub_string = ""
+
+    while i < len(string):
+        if string[i : i + separator_len] == separator:
+            splited_list += [sub_string]
+            i += separator_len
+            sub_string = ""
+        else:
+            sub_string += string[i]
+            i += 1
+    splited_list += [sub_string]
+
+    return splited_list
