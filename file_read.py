@@ -1,5 +1,5 @@
 ### STDLIB
-from typing import TextIO, Callable, Any, Generator
+from typing import Callable, Any, Generator
 
 ### CUSTOM
 from string_functions import split as str_split 
@@ -42,6 +42,3 @@ def read_file_by_line(file_path: str, encoding="utf-8", line_parser: Callable[[s
             data += [line_parser(line)] if line[-1] != "\n" else [line_parser(line[:-1])]
 
     return data
-
-def fprint(where: TextIO, what: str) -> None:
-    print(what, file=where)
